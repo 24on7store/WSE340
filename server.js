@@ -41,3 +41,8 @@ app.listen(port, () => {
 app.get("/", function(req, res){
   res.render("index", {title: "Home"})
 })
+
+//Index route added by me
+app.get("/", (req, res)=> {
+  res.render("index", {title: "CSE Motors Home"})
+})

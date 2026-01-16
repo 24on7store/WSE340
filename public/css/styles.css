@@ -4,3 +4,105 @@
 *:after {
   box-sizing: border-box;
 }
+
+
+/********** Mobile First **********/
+#top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #ffffff;
+}
+
+.siteName a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #222;
+}
+
+#tools a {
+  font-weight: 600;
+  text-decoration: none;
+  color: #111;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #222;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background: #fff;
+}
+
+.site-nav {
+  background-color: #1f2937;
+}
+
+.site-nav ul{
+  display: flex;
+  justify-content: space-around;
+  padding: 0.5rem;
+  list-style: none;
+}
+
+.site-nav a{
+  color: white;
+  text-decoration: none;
+}
+
+.hero {
+  padding: 1rem
+}
+
+.hero img{
+  width: 100%;
+}
+
+.btn{
+  display: inline-block;
+  background: #00a3c7;
+  color: black;
+  font-weight: bolder;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+}
+
+.upgrade-grid {
+  background: #00a3c7;
+  padding: 0.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.upgrade-grid figure {
+  background-color: #00a3c7;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.reviews ul {
+  padding-left: 1rem;
+}
+
+/* ===== Large Screens ===== */
+@media screen and (min-width: 768px) {
+  .hero {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .info {
+    display: flex;
+    gap: 2rem;
+  }
+}
+
