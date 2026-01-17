@@ -44,5 +44,5 @@ app.get("/", function(req, res){
 
 //Index route added by me
 app.get("/", (req, res)=> {
-  res.render("index", {title: "CSE Motors Home"})
+  res.render("index", {title: "CSE Motors"})
 })
