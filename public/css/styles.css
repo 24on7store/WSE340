@@ -1,3 +1,5 @@
+
+
 /******* Change Box Model ***************/
 *,
 *:before,
@@ -204,7 +206,34 @@ anchor for background card
 
 }
 
+/* Navigation codes */
+/* Container holding all vehicles */
+#inv-display {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
 
+/* Each vehicle card */
+#inv-display li {
+  text-align: center;
+}
+
+/* Image */
+#inv-display img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Text under image */
+#inv-display h2,
+#inv-display span {
+  margin-top: 0.5rem;
+}
 
 
 
