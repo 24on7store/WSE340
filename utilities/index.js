@@ -25,7 +25,16 @@ Util.getNav = async function (req, res, next) {
   return list
 }
 
-module.exports = Util
+
+/* ****************************************
+ * Middleware For Handling Errors
+ * Wrap other function in this for 
+ * General Error Handling
+ **************************************** */
+Util.handleErrors = fn => (req, res, next) => Promise.resolve(fn(req, res, next)).catch(next)
+
+
+//module.exports = Util
 
 
 
@@ -62,3 +71,28 @@ Util.buildClassificationGrid = async function(data){
   }
   return grid
 }
+
+/* **************************************
+ * Build vehicle detail HTML
+ ************************************** */
+
+Util.buildVehicleDetail = function (vehicle) {
+  return `
+  <section class="vehicle-detail">
+    <div class="vehicle-image">
+      <img src="${vehicle.inv_image}" alt="${vehicle.inv_make} ${vehicle.inv_model}">
+    </div>
+
+    <div class="vehicle-info">
+      <h2>${vehicle.inv_year} ${vehicle.inv_make} ${vehicle.inv_model}</h2>
+      <p class="price"><strong>Price:</strong> $${Number(vehicle.inv_price).toLocaleString()}</p>
+      <p><strong>Mileage:</strong> ${Number(vehicle.inv_miles).toLocaleString()} miles</p>
+      <p><strong>Description:</strong> ${vehicle.inv_description}</p>
+      <p><strong>Color:</strong> ${vehicle.inv_color}</p>
+    </div>
+  </section>
+  `
+}
+
+//module.exports = { buildVehicleDetail }
+module.exports = Util
